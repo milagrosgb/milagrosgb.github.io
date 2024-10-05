@@ -1,94 +1,143 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Porfolio Milagros Beltrame</title>
-    <link href="styles.css" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=BioRhyme Expanded' rel='stylesheet'>
-    
+    <title>Portfolio - Milagros Beltrame</title>
+    <link href="styles.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,600|Dancing+Script:400,600' rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-
 <body>
     <nav>
-        <input type="checkbox" id="toggle">
-        <div class="logo">
-            Milagros Beltrame
+        <div class="logo">Milagros Beltrame</div>
+        <div class="icon-bars" id="menuToggle">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
         </div>
-        <ul class="list">
+        <ul class="list" id="menu">
             <li><a href="#inicio">INICIO</a></li>
             <li><a href="#formacion">FORMACIÓN</a></li>
+            <li><a href="#skills">HABILIDADES</a></li>
+            <li><a href="#proyectos">PROYECTOS</a></li>
+            <li><a href="#testimonios">TESTIMONIOS</a></li>
             <li><a href="#contacto">CONTACTO</a></li>
         </ul>
-        <label for="toggle" class="icon-bars">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-        </label>
-
     </nav>
 
-    <section id="inicio" class="inicio">
-        <img src="imgprincipal.jpg" class="imgprincipal">
-        <div class="contenedor-texto">
-            <h1>¡Hola! mi nombre es Milagros</h1>
-            <p>Estoy encantada de estar aquí hoy para compartir con ustedes mi pasión por la programación y cómo estoy
-                construyendo mi camino en este emocionante campo tecnológico. Desde que descubrí mi amor por resolver
-                problemas mediante el código, he estado comprometida con aprender y crecer en este fascinante mundo.</p>
-            <p> Buscando oportunidades donde pueda aplicar mis habilidades técnicas y creativas para generar un impacto
-                positivo. Estoy comprometida con el aprendizaje continuo y estoy emocionada por las posibilidades que el
-                campo de la programación ofrece para la innovación y el crecimiento personal</p>
+    <header id="inicio">
+        <div class="header-content">
+            <div class="header-image">
+                <img src="imagen_principal.jpg" alt="imagenp" class="imagenprincipal">
+            </div>
+            <h1 class="zigzag">¡Hola! Soy Milagros</h1>
+            <p>Apasionada por la programación y en constante aprendizaje.</p>
+            <a href="#formacion" class="cta-button">Ver mi formación</a>
         </div>
+        <div class="background-shapes">
+            <div class="shape cube"></div>
+            <div class="shape pyramid"></div>
+            <div class="shape sphere"></div>
+        </div>
+    </header>
 
+    <section id="formacion">
+        <h2>Formación Actual</h2>
+        <p>Estudiante de programación en Jóvenes a Programar, aprendiendo HTML, CSS y JavaScript.</p>
+        <img src="imagen_p.jpg" alt="imagenp" class="imagenp">
+        <h3>Proyectos</h3>
+        <div class="project-cards">
+            <div class="project-card" onclick="openModal('Proyecto 1', 'Descripción detallada del Proyecto 1.')">
+                <h4>Proyecto 1</h4>
+                <p>Descripción breve del Proyecto 1</p>
+            </div>
+            <div class="project-card" onclick="openModal('Proyecto 2', 'Descripción detallada del Proyecto 2.')">
+                <h4>Proyecto 2</h4>
+                <p>Descripción breve del Proyecto 2</p>
+            </div>
+            <div class="project-card" onclick="openModal('Proyecto 3', 'Descripción detallada del Proyecto 3.')">
+                <h4>Proyecto 3</h4>
+                <p>Descripción breve del Proyecto 3</p>
+            </div>
+        </div>
     </section>
 
-    <section id="formacion" class="formacion">
-
-        <div class="contenedor-texto2">
-            <h2>Formación actual</h2>
-            <p>Actualmente estoy persiguiendo mi educación en Jovenes a programar, donde estoy
-                estudiando programación. Durante este tiempo, he tenido la oportunidad de
-                explorar diversos lenguajes y herramientas como html y css.</p>
-            <br>
-            <h3>Proyectos</h3>
-            <P>PROXIMAMENTE!</P>
-        </div>
-        <img src="imagen2.jpg" class="imagen2">
-
-
-
+    <section id="skills">
+        <h2>Mis Habilidades</h2>
+        <canvas id="skillsChart" width="400" height="400"></canvas>
+        <p>He desarrollado habilidades en varias tecnologías y estoy en constante aprendizaje.</p>
     </section>
 
-    <section id="contacto" class="contacto">
-        <div class="titulo-contacto">
-            <h3>Medios de contacto</h3>
+    <section id="proyectos">
+        <h2>Proyectos Destacados</h2>
+        <div class="highlighted-projects">
+            <div class="project-card" onclick="openModal('Proyecto Destacado 1', 'Descripción de un proyecto destacado.')">
+                <h4>Proyecto Destacado 1</h4>
+                <p>Descripción breve del proyecto destacado 1.</p>
+            </div>
+            <div class="project-card" onclick="openModal('Proyecto Destacado 2', 'Descripción de un proyecto destacado.')">
+                <h4>Proyecto Destacado 2</h4>
+                <p>Descripción breve del proyecto destacado 2.</p>
+            </div>
         </div>
+    </section>
 
+    <section id="testimonios">
+        <h2>Testimonios</h2>
+        <div class="testimonials">
+            <div class="testimonial-card">
+                <p>"Comentario1"</p>
+                <h4>- Persona1</h4>
+            </div>
+            <div class="testimonial-card">
+                <p>"Comentario2"</p>
+                <h4>- Persona2</h4>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto">
+        <h3>Medios de Contacto</h3>
         <div class="redes">
-            <div class="circulo">
-                <a href="https://www.ejemplo1.com" target="_blank">Estudios</a>
-            </div>
-            <div class="circulo">
-                <a href="https://www.instagram.com/milagrosbeltrame/" target="_blank">Instagram</a>
-            </div>
-            <div class="circulo">
-                <a href="https://www.linkedin.com/in/milagros-beltrame-b4b789313/" target="_blank">Linkedin</a>
-            </div>
-            <div class="circulo">
-                <a href="https://www.facebook.com/?stype=lo&deoia=1&jlou=AfeIZer38hQPK_G3UyxIMZ3G-9gd-6IEBdTsmqkkzKc37WDtkO64TfE6vO8Oyj0ojj9xZ_GoyUld89qvE06k9HcPHh542XKuHY7A7p8Kt-pLHA&smuh=48225&lh=Ac_spein2LyYjlL9w9M"
-                    target="_blank">Facebook</a>
-            </div>
+            <div class="circulo"><a href="https://www.ejemplo1.com">Estudios</a></div>
+            <div class="circulo"><a href="https://www.instagram.com/milagrosbeltrame/">Instagram</a></div>
+            <div class="circulo"><a href="https://www.linkedin.com/in/milagros-beltrame-b4b789313/">LinkedIn</a></div>
+            <div class="circulo"><a href="https://www.facebook.com/">Facebook</a></div>
         </div>
-
-
+        <h3>Formulario de Contacto</h3>
+        <form id="contactForm">
+            <input type="text" placeholder="Tu nombre" required>
+            <input type="email" placeholder="Tu correo" required>
+            <textarea placeholder="Tu mensaje" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
     </section>
 
+    <footer>
+        <p>© 2024 Milagros Beltrame. Todos los derechos reservados.</p>
+        <div class="footer-links">
+            <a href="#inicio">Inicio</a>
+            <a href="#formacion">Formación</a>
+            <a href="#skills">Habilidades</a>
+            <a href="#proyectos">Proyectos</a>
+            <a href="#testimonios">Testimonios</a>
+            <a href="#contacto">Contacto</a>
+        </div>
+    </footer>
 
+    <div id="snow"></div>
 
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <p id="modalDescription"></p>
+        </div>
+    </div>
 
-
-
-
-
+    <script src="script.js"></script>
+</body>
 </html>
+
